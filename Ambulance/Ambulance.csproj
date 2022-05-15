@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AB4D9C8-F730-4950-894B-7630FC1EBADF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ambulance</RootNamespace>
+    <AssemblyName>Ambulance</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminPanel\Brigades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Brigades.Designer.cs">
+      <DependentUpon>Brigades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\Doctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Doctors.Designer.cs">
+      <DependentUpon>Doctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\DoctorsAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\DoctorsAddEdit.Designer.cs">
+      <DependentUpon>DoctorsAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\Operators.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Operators.Designer.cs">
+      <DependentUpon>Operators.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\OperatorsAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\OperatorsAddEdit.Designer.cs">
+      <DependentUpon>OperatorsAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\Orderlies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Orderlies.Designer.cs">
+      <DependentUpon>Orderlies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\OrderliesAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\OrderliesAddEdit.Designer.cs">
+      <DependentUpon>OrderliesAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\Paramedic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Paramedic.Designer.cs">
+      <DependentUpon>Paramedic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\ParamedicAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\ParamedicAddEdit.Designer.cs">
+      <DependentUpon>ParamedicAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\Transport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Transport.Designer.cs">
+      <DependentUpon>Transport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\TransportAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\TransportAddEdit.Designer.cs">
+      <DependentUpon>TransportAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrigadesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BrigadesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BrigadesspecDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BrigadesspecDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorsDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoctorsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors_specializationDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Doctors_specializationDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ds\AmbulanceDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmbulanceDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ds\AmbulanceDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmbulanceDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ds\AmbulanceDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmbulanceDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorPanel\ActiveCall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorPanel\ActiveCall.Designer.cs">
+      <DependentUpon>ActiveCall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ds\AmbulanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmbulanceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ds\AmbulanceDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmbulanceDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Calls.cs" />
+    <Compile Include="Classes\DataBase.cs" />
+    <Compile Include="Classes\DGVPrinter.cs" />
+    <Compile Include="OperatorPanel\DoctorCall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorPanel\DoctorCall.Designer.cs">
+      <DependentUpon>DoctorCall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorPanel\OperatorPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorPanel\OperatorPanel.Designer.cs">
+      <DependentUpon>OperatorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorsDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperatorsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OrderliesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderliesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AdminPanel\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminPanel\Brigades.resx">
+      <DependentUpon>Brigades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\Doctors.resx">
+      <DependentUpon>Doctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\DoctorsAddEdit.resx">
+      <DependentUpon>DoctorsAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\Operators.resx">
+      <DependentUpon>Operators.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\OperatorsAddEdit.resx">
+      <DependentUpon>OperatorsAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\Orderlies.resx">
+      <DependentUpon>Orderlies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\OrderliesAddEdit.resx">
+      <DependentUpon>OrderliesAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\Paramedic.resx">
+      <DependentUpon>Paramedic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\ParamedicAddEdit.resx">
+      <DependentUpon>ParamedicAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\Transport.resx">
+      <DependentUpon>Transport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\TransportAddEdit.resx">
+      <DependentUpon>TransportAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorPanel\ActiveCall.resx">
+      <DependentUpon>ActiveCall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorPanel\DoctorCall.resx">
+      <DependentUpon>DoctorCall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorPanel\OperatorPanel.resx">
+      <DependentUpon>OperatorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="AdminPanel\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BrigadesDS.xsc">
+      <DependentUpon>BrigadesDS.xsd</DependentUpon>
+    </None>
+    <None Include="BrigadesDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BrigadesDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BrigadesDS.xss">
+      <DependentUpon>BrigadesDS.xsd</DependentUpon>
+    </None>
+    <None Include="BrigadesspecDS.xsc">
+      <DependentUpon>BrigadesspecDS.xsd</DependentUpon>
+    </None>
+    <None Include="BrigadesspecDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BrigadesspecDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BrigadesspecDS.xss">
+      <DependentUpon>BrigadesspecDS.xsd</DependentUpon>
+    </None>
+    <None Include="DoctorsDS.xsc">
+      <DependentUpon>DoctorsDS.xsd</DependentUpon>
+    </None>
+    <None Include="DoctorsDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoctorsDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DoctorsDS.xss">
+      <DependentUpon>DoctorsDS.xsd</DependentUpon>
+    </None>
+    <None Include="Doctors_specializationDS.xsc">
+      <DependentUpon>Doctors_specializationDS.xsd</DependentUpon>
+    </None>
+    <None Include="Doctors_specializationDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Doctors_specializationDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Doctors_specializationDS.xss">
+      <DependentUpon>Doctors_specializationDS.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet.xsc">
+      <DependentUpon>AmbulanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmbulanceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds\AmbulanceDataSet.xss">
+      <DependentUpon>AmbulanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet1.xsc">
+      <DependentUpon>AmbulanceDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmbulanceDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds\AmbulanceDataSet1.xss">
+      <DependentUpon>AmbulanceDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet2.xsc">
+      <DependentUpon>AmbulanceDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmbulanceDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds\AmbulanceDataSet2.xss">
+      <DependentUpon>AmbulanceDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet3.xsc">
+      <DependentUpon>AmbulanceDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmbulanceDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds\AmbulanceDataSet3.xss">
+      <DependentUpon>AmbulanceDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet4.xsc">
+      <DependentUpon>AmbulanceDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ds\AmbulanceDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmbulanceDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds\AmbulanceDataSet4.xss">
+      <DependentUpon>AmbulanceDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="OperatorsDS.xsc">
+      <DependentUpon>OperatorsDS.xsd</DependentUpon>
+    </None>
+    <None Include="OperatorsDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OperatorsDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OperatorsDS.xss">
+      <DependentUpon>OperatorsDS.xsd</DependentUpon>
+    </None>
+    <None Include="OrderliesDS.xsc">
+      <DependentUpon>OrderliesDS.xsd</DependentUpon>
+    </None>
+    <None Include="OrderliesDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrderliesDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OrderliesDS.xss">
+      <DependentUpon>OrderliesDS.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hide.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\1486564412-plus_81511.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>
